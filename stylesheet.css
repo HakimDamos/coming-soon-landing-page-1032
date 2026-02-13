@@ -51,7 +51,46 @@ body {
 /* Left side */
 .apparel-content {
   width: 60%;
-  background-color: sandybrown;
+  height: 50rem;
+  padding: 3rem 10rem;
+  display: flex;
+  flex-direction: column;
+}
+.apparel-content__icon {
+  width: 10rem;
+  height: fit-content;
+  margin-bottom: 8rem;
+}
+.apparel-content__icon img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.apparel-content__heading {
+  font-family: var(--text-primary);
+  font-weight: var(--text-weight-600);
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  width: 25rem;
+  letter-spacing: 0.25ch;
+  line-height: 5rem;
+  margin-bottom: 1.8rem;
+}
+.apparel-content__heading span {
+  font-weight: var(--text-weight-300);
+  color: var(--primary-pink-400);
+}
+.apparel-content__text {
+  font-family: var(--text-primary);
+  font-weight: var(--text-weight-600);
+  font-size: 18px;
+  color: var(--primary-pink-400);
+  text-transform: none;
+  width: 31rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.8rem;
 }
 /* Right side */
 .apparel-heroImage {
