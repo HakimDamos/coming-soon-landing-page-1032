@@ -8,6 +8,7 @@
 }
 
 :root {
+  /* Color Selection */
   --primary-pink-400: hsl(0, 36%, 70%);
   --primary-red-500: hsl(0, 93%, 68%);
   --neutral-gray-900: hsl(0, 6%, 24%);
@@ -35,6 +36,7 @@ body {
   width: 100%;
   display: grid;
   place-content: center;
+  background-color: #333;
 }
 
 .coming-soon_container {
@@ -42,7 +44,6 @@ body {
   min-width: 1400px;
   height: 100%;
   min-height: 50rem;
-  border: 1px dashed magenta;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,14 +53,47 @@ body {
 .apparel-content {
   width: 60%;
   height: 50rem;
-  padding: 3rem 10rem;
+  flex: 1;
+  padding: 80px 10%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+  /* background-image:
+    linear-gradient(135deg, hsl(0, 0%, 100%) 10%, hsl(0, 100%, 98%) 100%),
+    url(./images/bg-pattern-desktop.svg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+    /* hsla(0, 80%, 86%, 0.5), */ hsl(0, 74%, 74%),
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
 }
+.apparel-content::before {
+  content: ""; /* 3. Mandatory! Without this, it won't show up */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  background-image: url(./images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
 .apparel-content__icon {
   width: 10rem;
   height: fit-content;
   margin-bottom: 8rem;
+  aspect-ratio: auto;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 .apparel-content__icon img {
   width: 100%;
@@ -92,6 +126,45 @@ body {
   line-height: 1.75rem;
   margin-bottom: 1.8rem;
 }
+/* Newsletter Signup Input */
+.signUp-form {
+  display: flex;
+  flex-direction: revert;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  height: 3rem;
+  border: 1px dashed magenta;
+  justify-content: flex-end;
+  border: 1px solid hsl(0, 36%, 70%);
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.email-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  padding: 1rem 2rem 1rem;
+  font-family: var(--text-primary);
+  font-weight: var(--text-weight-600);
+  color: var(--primary-pink-400);
+}
+
+.btn-submit {
+  position: absolute;
+  top: 0px;
+  right: -1px;
+  width: 80px;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+  height: 100%;
+  border-radius: 50px;
+}
+
 /* Right side */
 .apparel-heroImage {
   width: 40%;
